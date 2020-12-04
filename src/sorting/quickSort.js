@@ -46,13 +46,17 @@ const partition = (arr = [], low, high) => {
  */
 const quickSort = (arr = [], low, high) => {
   let sortedArray = [...arr];
-  let partitionIndex;
+  let pIndex      = 0;
 
   if (low < high) {
-    partitionIndex = partition(arr, low, high);
+    // pIndex refers to partition index, sortedArray[pIndex] is now at right place
+    pIndex = partition(sortedArray, low, high);
 
-    quickSort(sortedArray, low, partitionIndex);
-    quickSort(sortedArray, partitionIndex + 1, high);
+    // console.log(pIndex); // 0, 2, 4
+
+    // Recursively sort elements before partition & after partition
+    quickSort(sortedArray, low, pIndex - 1); // before
+    quickSort(sortedArray, pIndex + 1, high); // after
   }
 
   return sortedArray;

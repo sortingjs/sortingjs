@@ -1,3 +1,9 @@
+/**
+ * Bubble Sorting Algorithm
+ */
+
+'use strict';
+
 const bubbleSort = (arr = []) => {
   let n = arr.length;
 
@@ -6,7 +12,6 @@ const bubbleSort = (arr = []) => {
       if (arr[j] > arr[j + 1]) {
         // swap arr[j + 1] and arr[j]
         let temp = arr[j];
-
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
       }

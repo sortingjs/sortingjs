@@ -9,11 +9,11 @@
  * in sorted array, and places all smaller(smaller than pivot) to left pivot and all greater
  * elements to right of pivot
  * 
- * @param {*} arr Array to be sorted
- * @param {*} low Starting index
- * @param {*} high Ending index
+ * @param {Array} arr Array to be sorted
+ * @param {Integer} low Starting index
+ * @param {Integer} high Ending index
  */
-const _partition = (arr = [], low, high) => {
+const partition = (arr = [], low, high) => {
   let pivot = arr[high];
   let i     = low - 1;
 
@@ -40,16 +40,16 @@ const _partition = (arr = [], low, high) => {
 /**
  * The main function to implement quickSort()
  * 
- * @param {*} arr Array to be sorted
- * @param {*} low Starting index
- * @param {*} high Ending index
+ * @param {Array} arr Array to be sorted
+ * @param {Integer} low Starting index
+ * @param {Integer} high Ending index
  */
 const quickSort = (arr = [], low, high) => {
   let sortedArray = [...arr];
   let partitionIndex;
 
   if (low < high) {
-    partitionIndex = _partition(arr, low, high);
+    partitionIndex = partition(arr, low, high);
 
     quickSort(sortedArray, low, partitionIndex);
     quickSort(sortedArray, partitionIndex + 1, high);

@@ -8,13 +8,13 @@
  * Print out current sorting algorithm name & output array
  * 
  * @param {*} sortName sorting algorithm name
- * @param {*} resultArray output array
+ * @param {*} outputArray output array
  */
-const printResult = (sortName, resultArray) => {
+const print = (sortName, outputArray) => {
   console.log(`${sortName}: `);
-  console.log(resultArray);
+  console.log(outputArray);
 };
 
 module.exports = {
-  printResult
+  print
 };

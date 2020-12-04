@@ -3,8 +3,15 @@ Sorting algorithm collections implemented with JavaScript.
 
 # Run this application
 This project is written with CommonJS convention, namely in NodeJS environment, therefore it can be run with code as follows:
+
+Approach 1 ( with npm scripts ):
 ```
-UNDER NODE ENV: node index.js
+#NODE ENV: node run start
+```
+
+Approach 2 ( run entry point file directly ):
+```
+#NODE ENV: node index.js
 ```
 
 # Contribution

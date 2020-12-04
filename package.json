@@ -1,0 +1,21 @@
+{
+  "name": "js-sorting-algorithms",
+  "version": "1.0.0",
+  "description": "Sorting algorithm collections implemented with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-sorting-algorithms/js-sorting-algorithms.git"
+  },
+  "keywords": ["sorting-algorithms", "JavaScript", "CommonJS", "ES6"],
+  "author": "Andy Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/js-sorting-algorithms/js-sorting-algorithms/issues"
+  },
+  "homepage": "https://github.com/js-sorting-algorithms/js-sorting-algorithms#readme"
+}

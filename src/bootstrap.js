@@ -19,7 +19,7 @@ utils.print(TypeEnum.BUBBLE_SORT, bubbleArr);
 
 // 2. Quick Sort
 // Due to quickSort() need to recursively invoke itself, we make a new array for this demo
-let quickArr = [3, 2, 1, 4, 7, 5, 6, 8];
+let quickArr = [3, 2, 1, 8, 7, 5, 6, 4];
 let quickLen = quickArr.length;
 utils.print(ORIGINAL_ARRAY, quickArr);
 

@@ -50,7 +50,7 @@ const quickSort = (arr = [], start, end) => {
   // exit the quickSort recursion, if start index is greater or equal to end index
   // at this place, we recursively invoke quickSort when start index is smaller than end index
   if (start < end) {
-    // pIndex refers to partition index, sortedArray[pi] is now at right place
+    // pIndex refers to partition index, arr[pIndex] is now at the right place
     let pIndex = partition(arr, start, end);
 
     // Recursively sort elements before partition & after partition

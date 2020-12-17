@@ -10,12 +10,18 @@ const bubbleSort     = require('./sorting/bubbleSort');
 const quickSort      = require('./sorting/quickSort');
 
 const ORIGINAL_ARRAY = 'originalArray';
-let originArr        = [13, 12, 18, 19, 15, 11];
-let originLen        = originArr.length;
-utils.print(ORIGINAL_ARRAY, originArr);
+let originArr        = [13, 12, 19, 11, 17, 16, 15];
 
+// 1. Bubble Sort
 let bubbleArr = bubbleSort(originArr);
+utils.print(ORIGINAL_ARRAY, originArr);
 utils.print(TypeEnum.BUBBLE_SORT, bubbleArr);
 
-let quickArr = quickSort(originArr, 0, originLen - 1);
+// 2. Quick Sort
+// Due to quickSort() need to recursively invoke itself, we make a new array for this demo
+let quickArr = [3, 2, 1, 4, 7, 5, 6, 8];
+let quickLen = quickArr.length;
+utils.print(ORIGINAL_ARRAY, quickArr);
+
+quickSort(quickArr, 0, quickLen - 1);
 utils.print(TypeEnum.QUICK_SORT, quickArr);

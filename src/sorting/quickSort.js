@@ -10,56 +10,53 @@
  * elements to right of pivot
  * 
  * @param {Array} arr Array to be sorted
- * @param {Integer} low Starting index
- * @param {Integer} high Ending index
+ * @param {Integer} start Starting index
+ * @param {Integer} end Ending index
  */
-const partition = (arr = [], low, high) => {
-  let pivot = arr[high];
-  let i     = low - 1;
+const partition = (arr = [], start, end) => {
+  let pivot  = arr[end]; // always find rightmost element as pivot
+  let pIndex = start;
 
-  for (let j = low; j < high; j++) {
-    // if current element is smaller than the pivot
-    if (arr[j] < pivot) {
-      i++;
+  // move all the elements smaller than pivot to the left
+  for (let i = start; i < end; i++) {
+    // if current element is smaller than the pivot,
+    // we swap current element with pIndex element, and increment pIndex
+    if (arr[i] <= pivot) {
+      // swap arr[i] and arr[pIndex]
+      let temp1 = arr[i];
+      arr[i] = arr[pIndex];
+      arr[pIndex] = temp1;
 
-      // swap arr[i] and arr[j]
-      let temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
+      pIndex++;
     }
   }
 
-  // swap arr[i + 1] and arr[high]
-  let temp = arr[i + 1];
-  arr[i + 1] = arr[high];
-  arr[high] = temp;
+  // swap pIndex element and pivot element
+  let temp2 = arr[pIndex];
+  arr[pIndex] = arr[end];
+  arr[end] = temp2;
 
-  return i + 1;
+  return pIndex;
 };
 
 /**
  * The main function to implement quickSort()
  * 
  * @param {Array} arr Array to be sorted
- * @param {Integer} low Starting index
- * @param {Integer} high Ending index
+ * @param {Integer} start Starting index
+ * @param {Integer} end Ending index
  */
-const quickSort = (arr = [], low, high) => {
-  let sortedArray = [...arr];
-  let pIndex      = 0;
-
-  if (low < high) {
-    // pIndex refers to partition index, sortedArray[pIndex] is now at right place
-    pIndex = partition(sortedArray, low, high);
-
-    // console.log(pIndex); // 0, 2, 4
+const quickSort = (arr = [], start, end) => {
+  // exit the quickSort recursion, if start index is greater or equal to end index
+  // at this place, we recursively invoke quickSort when start index is smaller than end index
+  if (start < end) {
+    // pIndex refers to partition index, sortedArray[pi] is now at right place
+    let pIndex = partition(arr, start, end);
 
     // Recursively sort elements before partition & after partition
-    quickSort(sortedArray, low, pIndex - 1); // before
-    quickSort(sortedArray, pIndex + 1, high); // after
+    quickSort(arr, start, pIndex - 1);  // before
+    quickSort(arr, pIndex + 1, end); // after
   }
-
-  return sortedArray;
 };
 
 module.exports = quickSort;

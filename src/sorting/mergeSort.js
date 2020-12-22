@@ -27,14 +27,14 @@ const merge = (arr = [], start, middle, end) => {
     Right[j] = arr[middle + 1 + j];
   }
 
+  //----------------------
   // Merge the temp arrays
+  //----------------------
   
-  // initialize indexes of first and second subarrays
-  let i = 0;
-  let j = 0;
-
-  // initialize index of merged subarray
-  let k = start;
+  // initialize indexes of first and second subarrays, and index of merged subarray
+  let i = 0;     // index of temp left array
+  let j = 0;     // index of temp right array
+  let k = start; // index of sorted array
 
   //--------------------------------------------------------
   // the following 3 while loop would produce a sorted array
@@ -50,14 +50,15 @@ const merge = (arr = [], start, middle, end) => {
     k++;
   }
 
-  // copy remaining elements of L if any
+  // note: only one of the following while loop will be executed
+  // 1. copy remaining elements of L if any
   while (i < n1) {
     arr[k] = Left[i];
     i++;
     k++;
   }
 
-  // copy remaining elements of R if any
+  // 2. copy remaining elements of R if any
   while (j < n2) {
     arr[k] = Right[j];
     j++;

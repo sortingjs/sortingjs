@@ -10,21 +10,21 @@
  * @param {*} middle middle index
  * @param {*} end end index
  */
-const merge = (arr = [], l, m, r) => {
-  // Find sizes of two subarrays to be merged
-  let n1 = m - l + 1;
-  let n2 = r - m;
+const merge = (arr = [], start, middle, end) => {
+  // Find lengths of two subarrays to be merged
+  let n1 = middle - start + 1;
+  let n2 = end - middle;
 
-  // Create temp arrays
-  let L = [];
-  let R = [];
+  // Create temp arrays - left half & right half
+  let Left  = [];
+  let Right = [];
 
   // Copy data to temp arrays
   for (let i = 0; i < n1; i++) {
-    L[i] = arr[l + i];
+    Left[i] = arr[start + i];
   }
   for (let j = 0; j < n2; j++) {
-    R[j] = arr[m + 1 + j];
+    Right[j] = arr[middle + 1 + j];
   }
 
   // Merge the temp arrays
@@ -34,13 +34,17 @@ const merge = (arr = [], l, m, r) => {
   let j = 0;
 
   // initialize index of merged subarray
-  let k = l;
+  let k = start;
+
+  //--------------------------------------------------------
+  // the following 3 while loop would produce a sorted array
+  //--------------------------------------------------------
   while (i < n1 && j < n2) {
-    if (L[i] <= R[j]) {
-      arr[k] = L[j];
+    if (Left[i] <= Right[j]) {
+      arr[k] = Left[i];
       i++;
     } else {
-      arr[k] = R[j];
+      arr[k] = Right[j];
       j++;
     }
     k++;
@@ -48,14 +52,14 @@ const merge = (arr = [], l, m, r) => {
 
   // copy remaining elements of L if any
   while (i < n1) {
-    arr[k] = L[i];
+    arr[k] = Left[i];
     i++;
     k++;
   }
 
   // copy remaining elements of R if any
   while (j < n2) {
-    arr[k] = R[j];
+    arr[k] = Right[j];
     j++;
     k++;
   }
@@ -71,9 +75,10 @@ const merge = (arr = [], l, m, r) => {
 const mergeSort = (arr = [], start, end) => {
   if (start < end) {
     // find the middle point
-    let middle = (start + end) / 2;
+    let middle = Math.floor((start + end) / 2);
 
     // sort first and second halves
+    // recursively call mergeSort() till start < end
     mergeSort(arr, start, middle);
     mergeSort(arr, middle + 1, end);
 

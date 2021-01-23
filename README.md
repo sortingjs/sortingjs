@@ -1,4 +1,4 @@
-## JS-Sorting-Algorithms
+## JavaScript Sorting Algorithms
 Sorting algorithm collections implemented with JavaScript. So far, we have covered [bubbleSort()](https://github.com/js-sorting-algorithms/js-sorting-algorithms/blob/main/src/sorting/bubbleSort.js), [mergeSort()](https://github.com/js-sorting-algorithms/js-sorting-algorithms/blob/main/src/sorting/mergeSort.js), [quickSort()](https://github.com/js-sorting-algorithms/js-sorting-algorithms/blob/main/src/sorting/quickSort.js) algorithms in this repo. For more sorting algorithms, please stay tuned!
 
 ## Run This Application

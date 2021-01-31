@@ -6,7 +6,7 @@ This project is written with commonjs convention, namely in nodejs environment, 
 
 Approach 1 ( with npm script ):
 ```
-#NODE ENV: node run start
+#NODE ENV: npm run start
 ```
 
 Approach 2 ( run the entry point file directly ):

@@ -1,7 +1,6 @@
 /**
  * Entry point file for the whole application
  */
-
 'use strict';
 
 const TypeEnum       = require('./enum');

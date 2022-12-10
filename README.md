@@ -15,7 +15,7 @@ Approach 2 ( run the entry point file directly ):
 ```
 
 ## Contribution
-If someone wants join in this organization or contribute to this project, please feel free to FORK, submit PRs, or file ISSUES. Any kind of contributions is warmly welcomed.
+If someone wants to join this organization or contribute to this project, please feel free to FORK, submit PRs, or file ISSUES. Any kind of contribution is warmly welcomed.
 
 ## Contact
 Email: tjcchen.engineer@gmail.com
